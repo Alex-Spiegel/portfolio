@@ -1,0 +1,10 @@
+primary: #006a57, Hauptfarbe (Buttons, Titel)
+secondary: #00a790, Akzentfarbe (Subtitles, Links)
+accent: #ffd166, Optionaler Highlight (CTA-Hover, Icons)
+muted: #e6f1ef, Hintergrund Panels
+bg: #f6fefc, Gesamthintergrund
+foreground: #171717, Haupttext
+
+Headline (H1): 'Alegreya', serif;
+Subheadline (H2): 'DM Sans', sans-serif;
+Text (P): Inter, Super lesbar, neutral, ideal für Body Copy
