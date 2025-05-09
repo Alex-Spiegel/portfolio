@@ -1,7 +1,7 @@
 import { projects } from "@/lib/projectData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-//import ProjectCard from "@/app/_components/ProjectCard"; // PLACEHOLDER -> change to carroussel
+import ProjectCard from "@/app/_components/ProjectCard"; // PLACEHOLDER -> change to carroussel
 
 export default function ProjectPage({ params }) {
   const project = projects.find((p) => p.slug === params.slug);
@@ -183,12 +183,12 @@ export default function ProjectPage({ params }) {
       </section>
 
       {/* (5) Other Projects */}
-      {/* <section className="space-y-4">
+      <section className="space-y-4">
         <h2 className="text-2xl font-heading font-bold text-primary">
           Other Projects
         </h2>
         <ProjectCard />
-      </section> */}
+      </section>
     </article>
   );
 }
