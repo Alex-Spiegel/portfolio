@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -25,7 +26,7 @@ export default function HomePage() {
             Hi, my name is Alex
           </h1>
           <h2 className="text-2xl font-sub font-light text-secondary mt-2">
-            I'm a full stack web developer
+            I&apos;m a full stack web developer
           </h2>
         </div>
 
@@ -36,18 +37,18 @@ export default function HomePage() {
         </p>
 
         <div className="flex gap-4 justify-center md:justify-start">
-          <a
+          <Link
             href="/projects"
             className="bg-primary text-white px-6 py-2 rounded-md hover:bg-secondary transition"
           >
             View Projects
-          </a>
-          <a
+          </Link>
+          <Link
             href="/contact"
             className="border border-primary text-primary px-6 py-2 rounded-md hover:bg-muted transition"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </main>

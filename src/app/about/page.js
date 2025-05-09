@@ -6,7 +6,7 @@ export default function About() {
           About Me
         </h1>
         <p className="text-lg font-body text-foreground leading-relaxed">
-          I'm Alex - a full stack{" "}
+          I&apos;m Alex - a full stack{" "}
           <span className="text-secondary font-bold">web developer</span> based
           in Germany. My journey into tech started through education,
           creativity, and a constant desire to{" "}
@@ -16,7 +16,7 @@ export default function About() {
           .
         </p>
         <p className="text-lg font-body text-foreground leading-relaxed">
-          I've spent years navigating{" "}
+          I&apos;ve spent years navigating{" "}
           <span className="text-secondary font-bold">
             education and personal growth
           </span>{" "}

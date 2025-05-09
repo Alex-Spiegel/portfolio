@@ -5,12 +5,12 @@ export default function Contact() {
   return (
     <section className="max-w-xl mx-auto px-4 py-16 text-center space-y-6">
       <h1 className="text-4xl font-heading font-bold text-primary">
-        Let's connect
+        Let&apos;s connect
       </h1>
 
       <p className="text-lg font-body text-foreground">
-        Whether it's a potential project, a job opportunity, or just a friendly
-        hello – feel free to reach out. I'd love to hear from you.
+        Whether it&apos;s a potential project, a job opportunity, or just a
+        friendly hello – feel free to reach out. I&apos;d love to hear from you.
       </p>
 
       <div className="space-y-2">
