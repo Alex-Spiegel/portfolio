@@ -17,21 +17,20 @@ export const projects = [
     ],
 
     techUsed: [
-      "For the **frontend**, I used Next.js - it felt like a natural fit for building a modern, responsive web app with a fast developer experience. Since Supabase integrates smoothly with Next (especially for authentication and database access), it made sense to explore this stack further.",
+      "For the **frontend**, I used Next.js - it felt like a natural fit for building a modern, **responsive** web app with a fast developer experience. Since Supabase integrates smoothly with Next (especially for authentication and database access), it made sense to explore this stack further.",
       "For the **backend** logic, I opted for a minimal Express.js layer to handle specific API needs. Instead of going with MongoDB again (which I had already worked with during my bootcamp), I wanted to dive deeper into Supabase as a full-service solution. It offers built-in authentication, role-based access, and a Postgres database - all in one place, which was great to explore and test out.",
       "**Styling-wise**, I used Tailwind CSS because of its speed and flexibility. It plays nicely with Next.js and allowed me to iterate quickly without writing custom CSS.\nTo manage **global UI** state like user roles or auth status, I used a lightweight Context-based solution instead of Redux — simple and sufficient for this project's scope.",
     ],
     lessons: [
       "This project taught me a lot - far more than I can summarize here. One key takeaway was understanding the **interaction between frontend search functionality** and a **multi-layered backend** using routes, controllers, and services, all connected via Supabase.",
-
       "Equally important: I gained a better sense for how to **structure** and **deliver content** in a way that actually serves the **user's intent** — especially when it comes to **search** and **filtering**.\nI also deepened my understanding of React hooks, Git workflows, and working with Next.js and Express.",
-
       "Lastly, building something **end-to-end** gave me a lot of **confidence** — not just technically, but also in **planning**, **adapting**, and **shipping something** real.",
     ],
 
     stack: ["Next.js", "Tailwind CSS", "Express.js", "Supabase"],
     github: "https://github.com/Alex-Spiegel/herbal_compass",
-    live: "...",
+    live: null,
+    // alle screenshots müssen Breite = 1280px haben!!!
     screenshots: [
       "/images/herbalcompass/01.png",
       "/images/herbalcompass/02.png",

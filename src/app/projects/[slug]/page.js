@@ -1,14 +1,37 @@
 import { projects } from "@/lib/projectData";
-import Image from "next/image";
 import { notFound } from "next/navigation";
-import ProjectCard from "@/app/_components/ProjectCard"; // PLACEHOLDER -> change to carroussel
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiExpress,
+  SiSupabase,
+} from "react-icons/si";
+
+const stackInfo = {
+  "Next.js": {
+    icon: <SiNextdotjs className="text-black text-2xl" />,
+    label: "Next.js",
+  },
+  "Tailwind CSS": {
+    icon: <SiTailwindcss className="text-sky-400 text-2xl" />,
+    label: "Tailwind CSS",
+  },
+  "Express.js": {
+    icon: <SiExpress className="text-gray-700 text-2xl" />,
+    label: "Express.js",
+  },
+  Supabase: {
+    icon: <SiSupabase className="text-green-600 text-2xl" />,
+    label: "Supabase",
+  },
+};
 
 export default function ProjectPage({ params }) {
   const project = projects.find((p) => p.slug === params.slug);
   if (!project) return notFound();
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-16 space-y-16">
+    <article className="max-w-5xl mx-auto px-4 py-16 space-y-16">
       {/* (1) Intro */}
       <section className="space-y-4">
         <h1 className="text-4xl font-heading font-bold text-primary">
@@ -31,18 +54,21 @@ export default function ProjectPage({ params }) {
           </p>
         ))}
 
+        {/* stack Anzeige */}
         <div className="flex flex-wrap gap-2 text-sm font-mono">
           {project.stack.map((tech, i) => (
-            <span key={i} className="bg-muted px-2 py-1 rounded">
+            <span key={i} className="bg-accent px-2 py-1 rounded">
               {tech}
             </span>
           ))}
         </div>
 
+        {/* social links */}
         <div className="pt-4 space-x-4">
           <a
             href={project.live}
             target="_blank"
+            rel="noopener noreferrer"
             className="text-secondary hover:underline font-medium"
           >
             Live Site
@@ -50,18 +76,19 @@ export default function ProjectPage({ params }) {
           <a
             href={project.github}
             target="_blank"
+            rel="noopener noreferrer"
             className="text-secondary hover:underline font-medium"
           >
             GitHub Repo
           </a>
         </div>
 
-        <Image
+        {/* goldener Screenshot */}
+        <img
           src={project.screenshots[0]}
-          alt={`${project.title} screenshot`}
-          width={1200}
-          height={700}
-          className="rounded-lg shadow-md mt-8"
+          alt={`${project.title} screenshot_01`}
+          width={1280}
+          height="auto"
         />
       </section>
 
@@ -111,49 +138,72 @@ export default function ProjectPage({ params }) {
           </p>
         ))}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="columns-1 md:columns-2 gap-8">
           {project.screenshots.slice(1, 5).map((src, i) => (
-            <Image
+            <img
               key={i}
               src={src}
               alt={`Feature ${i + 2}`}
-              width={600}
-              height={350}
-              className="rounded shadow"
+              width="auto"
+              height="auto"
+              className="mb-6 w-full rounded-lg"
+              style={{ boxShadow: "0 0 20px rgba(0,0,0,0.4)" }}
             />
           ))}
         </div>
 
+        {/* Tech Used */}
         <h3 className="text-xl font-heading font-semibold text-primary mt-8">
           Tech Used
         </h3>
 
-        {/* HIER NOCH ICONS VON TECH USED EINFÜGEN */}
+        <div className="flex gap-4">
+          {/* tech text */}
+          <div className="">
+            {project.techUsed.map((paragraph, i) => (
+              <p
+                key={i}
+                className="whitespace-pre-line text-base font-body text-foreground leading-relaxed mb-4"
+              >
+                {paragraph
+                  .split(/(\*\*.*?\*\*)/)
+                  .map((part, j) =>
+                    part.startsWith("**") ? (
+                      <strong key={j}>{part.replace(/\*\*/g, "")}</strong>
+                    ) : (
+                      <span key={j}>{part}</span>
+                    )
+                  )}
+              </p>
+            ))}
+          </div>
 
-        {project.techUsed.map((paragraph, i) => (
-          <p
-            key={i}
-            className="whitespace-pre-line text-base font-body text-foreground leading-relaxed mb-4"
-          >
-            {paragraph
-              .split(/(\*\*.*?\*\*)/)
-              .map((part, j) =>
-                part.startsWith("**") ? (
-                  <strong key={j}>{part.replace(/\*\*/g, "")}</strong>
-                ) : (
-                  <span key={j}>{part}</span>
-                )
-              )}
-          </p>
-        ))}
+          {/* stack icons */}
+          <div className="w-1/4 flex flex-col gap-4 justify-evenly items-center">
+            {project.stack.map((tech, index) =>
+              stackInfo[tech] ? (
+                <div
+                  key={index}
+                  className="w-40 p-4 flex justify-center items-center gap-2 bg-accent shadow-lg"
+                >
+                  {stackInfo[tech].icon}
+                  <span className="text-sm font-medium">
+                    {stackInfo[tech].label}
+                  </span>
+                </div>
+              ) : null
+            )}
+          </div>
+        </div>
 
         {project.screenshots[5] && (
-          <Image
+          <img
             src={project.screenshots[5]}
-            alt="Tech Screenshot"
-            width={1200}
-            height={600}
-            className="rounded shadow"
+            alt={`${project.title} screenshot_02`}
+            width={1280}
+            height="auto"
+            className="my-6 w-full rounded-lg"
+            style={{ boxShadow: "0 0 20px rgba(0,0,0,0.4)" }}
           />
         )}
       </section>
@@ -187,7 +237,6 @@ export default function ProjectPage({ params }) {
         <h2 className="text-2xl font-heading font-bold text-primary">
           Other Projects
         </h2>
-        <ProjectCard />
       </section>
     </article>
   );
