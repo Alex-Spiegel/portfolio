@@ -159,7 +159,7 @@ export default function ProjectPage({ params }) {
 
         <div className="flex gap-4">
           {/* tech text */}
-          <div className="">
+          <div>
             {project.techUsed.map((paragraph, i) => (
               <p
                 key={i}
@@ -179,7 +179,7 @@ export default function ProjectPage({ params }) {
           </div>
 
           {/* stack icons */}
-          <div className="w-1/4 flex flex-col gap-4 justify-evenly items-center">
+          <div className="hidden w-1/4 md:flex flex-col gap-4 justify-evenly items-center">
             {project.stack.map((tech, index) =>
               stackInfo[tech] ? (
                 <div
