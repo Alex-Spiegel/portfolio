@@ -2,6 +2,7 @@ export const projects = [
   {
     slug: "herbalcompass",
     title: "Herbal Compass",
+    description: ["A Next.JS-based app for finding natural remedies."],
     introduction: [
       "Herbal Compass is a health-focused web application that helps users **discover natural remedies and herbal products** tailored to specific symptoms or ingredients. I built this project from scratch as part of my web development training at 'Code Labs Academy', where it served as my final project to complete the certification.",
     ],
@@ -41,8 +42,56 @@ export const projects = [
     ],
   },
   {
+    slug: "weatherapp",
+    title: "Weather App",
+    description: [
+      "A React-based weather forecast tool with live API integration.",
+    ],
+    introduction: ["...", "..."],
+    purpose: ["...", "..."],
+    features: ["...", "..."],
+    techUsed: ["...", "..."],
+    lessons: ["...", "..."],
+    stack: ["...", "...", "..."],
+    github: "https://github.com/",
+    live: "https://example.com",
+    screenshots: [
+      "/images/projectname/01.png",
+      "/images/projectname/02.png",
+      "/images/projectname/03.png",
+      "/images/projectname/04.png",
+      "/images/projectname/05.png",
+      "/screenshot_placeholder.png",
+    ],
+  },
+  {
+    slug: "randomapp",
+    title: "Random App",
+    description: ["A React-based app to fill your page with random text."],
+    introduction: ["...", "..."],
+    purpose: ["...", "..."],
+    features: ["...", "..."],
+    techUsed: ["...", "..."],
+    lessons: ["...", "..."],
+    stack: ["...", "...", "..."],
+    github: "https://github.com/",
+    live: "https://example.com",
+    screenshots: [
+      "/images/projectname/01.png",
+      "/images/projectname/02.png",
+      "/images/projectname/03.png",
+      "/images/projectname/04.png",
+      "/images/projectname/05.png",
+      "/screenshot_placeholder.png",
+    ],
+  },
+];
+
+/*
+{
     slug: "slugname",
     title: "projectTitle",
+    description: ["..."],
     introduction: ["...", "..."],
     purpose: ["...", "..."],
     features: ["...", "..."],
@@ -60,4 +109,4 @@ export const projects = [
       "/images/projectname/06.png",
     ],
   },
-];
+*/

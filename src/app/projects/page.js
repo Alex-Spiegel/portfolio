@@ -1,4 +1,5 @@
-import ProjectCard from "../_components/ProjectCard";
+import { projects } from "@/lib/projectData";
+import ProjectCard from "@/app/_components/ProjectCard";
 
 export default function Projects() {
   return (
@@ -13,24 +14,15 @@ export default function Projects() {
       </p>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <ProjectCard
-          title="HerbalCompass"
-          description="A Next.JS-based app for finding natural remedies."
-          image="/screenshot_placeholder.png"
-          href="/projects/herbalcompass"
-        />
-        <ProjectCard
-          title="Weather App"
-          description="A React-based weather forecast tool with live API integration."
-          image="/screenshot_placeholder.png"
-          href="/projects/weather-app"
-        />
-        <ProjectCard
-          title="Random App"
-          description="A React-based app to randomise your poops."
-          image="/screenshot_placeholder.png"
-          href="/projects/weather-app"
-        />
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            title={project.title}
+            description={project.description}
+            image={project.screenshots[5]}
+            href={`/projects/${project.slug}`}
+          />
+        ))}
       </div>
     </section>
   );

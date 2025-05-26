@@ -6,6 +6,7 @@ import {
   SiExpress,
   SiSupabase,
 } from "react-icons/si";
+import OtherProjects from "@/app/_components/OtherProjects";
 
 const stackInfo = {
   "Next.js": {
@@ -27,17 +28,18 @@ const stackInfo = {
 };
 
 export default function ProjectPage({ params }) {
-  const project = projects.find((p) => p.slug === params.slug);
-  if (!project) return notFound();
+  const currentSlug = params.slug;
+  const currentProject = projects.find((p) => p.slug === currentSlug);
+  if (!currentProject) return notFound();
 
   return (
     <article className="max-w-5xl mx-auto px-4 py-16 space-y-16">
       {/* (1) Intro */}
       <section className="space-y-4">
         <h1 className="text-4xl font-heading font-bold text-primary">
-          {project.title}
+          {currentProject.title}
         </h1>
-        {project.introduction.map((paragraph, i) => (
+        {currentProject.introduction.map((paragraph, i) => (
           <p
             key={i}
             className="text-base font-body text-foreground leading-relaxed mb-4"
@@ -56,17 +58,17 @@ export default function ProjectPage({ params }) {
 
         {/* stack Anzeige */}
         <div className="flex flex-wrap gap-2 text-sm font-mono">
-          {project.stack.map((tech, i) => (
+          {currentProject.stack.map((tech, i) => (
             <span key={i} className="bg-accent px-2 py-1 rounded">
               {tech}
             </span>
           ))}
         </div>
 
-        {/* social links */}
+        {/* social Links */}
         <div className="pt-4 space-x-4">
           <a
-            href={project.live}
+            href={currentProject.live}
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:underline font-medium"
@@ -74,7 +76,7 @@ export default function ProjectPage({ params }) {
             Live Site
           </a>
           <a
-            href={project.github}
+            href={currentProject.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-secondary hover:underline font-medium"
@@ -85,8 +87,8 @@ export default function ProjectPage({ params }) {
 
         {/* goldener Screenshot */}
         <img
-          src={project.screenshots[0]}
-          alt={`${project.title} screenshot_01`}
+          src={currentProject.screenshots[0]}
+          alt={`${currentProject.title} screenshot_01`}
           width={1280}
           height="auto"
         />
@@ -97,7 +99,7 @@ export default function ProjectPage({ params }) {
         <h2 className="text-2xl font-heading font-bold text-primary">
           Project Purpose and Goal
         </h2>
-        {project.purpose.map((paragraph, i) => (
+        {currentProject.purpose.map((paragraph, i) => (
           <p
             key={i}
             className="text-base font-body text-foreground leading-relaxed mb-4"
@@ -121,7 +123,7 @@ export default function ProjectPage({ params }) {
           Main Features of the Project
         </h2>
 
-        {project.features.map((paragraph, i) => (
+        {currentProject.features.map((paragraph, i) => (
           <p
             key={i}
             className="whitespace-pre-line text-base font-body text-foreground leading-relaxed mb-4"
@@ -139,7 +141,7 @@ export default function ProjectPage({ params }) {
         ))}
 
         <div className="columns-1 md:columns-2 gap-8">
-          {project.screenshots.slice(1, 5).map((src, i) => (
+          {currentProject.screenshots.slice(1, 5).map((src, i) => (
             <img
               key={i}
               src={src}
@@ -160,7 +162,7 @@ export default function ProjectPage({ params }) {
         <div className="flex gap-4">
           {/* tech text */}
           <div>
-            {project.techUsed.map((paragraph, i) => (
+            {currentProject.techUsed.map((paragraph, i) => (
               <p
                 key={i}
                 className="whitespace-pre-line text-base font-body text-foreground leading-relaxed mb-4"
@@ -180,7 +182,7 @@ export default function ProjectPage({ params }) {
 
           {/* stack icons */}
           <div className="hidden w-1/4 md:flex flex-col gap-4 justify-evenly items-center">
-            {project.stack.map((tech, index) =>
+            {currentProject.stack.map((tech, index) =>
               stackInfo[tech] ? (
                 <div
                   key={index}
@@ -196,10 +198,10 @@ export default function ProjectPage({ params }) {
           </div>
         </div>
 
-        {project.screenshots[5] && (
+        {currentProject.screenshots[5] && (
           <img
-            src={project.screenshots[5]}
-            alt={`${project.title} screenshot_02`}
+            src={currentProject.screenshots[5]}
+            alt={`${currentProject.title} screenshot_02`}
             width={1280}
             height="auto"
             className="my-6 w-full rounded-lg"
@@ -214,7 +216,7 @@ export default function ProjectPage({ params }) {
           Lessons Learned
         </h2>
 
-        {project.lessons.map((paragraph, i) => (
+        {currentProject.lessons.map((paragraph, i) => (
           <p
             key={i}
             className="whitespace-pre-line text-base font-body text-foreground leading-relaxed mb-4"
@@ -237,6 +239,9 @@ export default function ProjectPage({ params }) {
         <h2 className="text-2xl font-heading font-bold text-primary">
           Other Projects
         </h2>
+
+        {/* Detailanzeige für currentProject */}
+        <OtherProjects currentSlug={currentSlug} />
       </section>
     </article>
   );
