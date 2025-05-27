@@ -10,7 +10,7 @@ export default function Contact() {
 
       <p className="text-lg font-body text-foreground">
         Whether it&apos;s a potential project, a job opportunity, or just a
-        friendly hello – feel free to reach out. I&apos;d love to hear from you.
+        friendly hello - feel free to reach out. I&apos;d love to hear from you.
       </p>
 
       <div className="space-y-2">
@@ -34,7 +34,7 @@ export default function Contact() {
           <FaGithub />
         </a>
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://linkedin.com/in/alexander-schaz"
           target="_blank"
           rel="noopener noreferrer"
         >

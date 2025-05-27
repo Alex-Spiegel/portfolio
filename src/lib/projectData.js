@@ -40,6 +40,7 @@ export const projects = [
       "/images/herbalcompass/05.png",
       "/images/herbalcompass/06.png",
     ],
+    published: true,
   },
   {
     slug: "weatherapp",
@@ -63,6 +64,7 @@ export const projects = [
       "/images/projectname/05.png",
       "/screenshot_placeholder.png",
     ],
+    published: false,
   },
   {
     slug: "randomapp",
@@ -84,6 +86,7 @@ export const projects = [
       "/images/projectname/05.png",
       "/screenshot_placeholder.png",
     ],
+    published: false,
   },
 ];
 
@@ -108,5 +111,6 @@ export const projects = [
       "/images/projectname/05.png",
       "/images/projectname/06.png",
     ],
+    published: false,
   },
 */
