@@ -48,7 +48,7 @@ export default function Navbar() {
           <FaGithub />
         </a>
         <a
-          href="https://linkedin.com/in/DEINUSERNAME"
+          href="https://www.linkedin.com/in/alexander-schaz"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -89,7 +89,7 @@ export default function Navbar() {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/DEINUSERNAME"
+              href="https://www.linkedin.com/in/alexander-schaz"
               target="_blank"
               rel="noopener noreferrer"
             >
